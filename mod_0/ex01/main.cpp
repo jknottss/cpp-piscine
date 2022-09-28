@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jknotts <jknotts@student.21-school>       +#+  +:+       +#+         */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,29 +9,30 @@
 /*   Updated: 2022/09/26 23:35:44 by jknotts          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "PhoneBook.h"
+//#include "Contact.h"
 
-#include <iostream>
-#include <cstring>
-
-void meg(int argc, char **argv)
+int main()
 {
-    while(--argc)
+    PhoneBook app;
+    std::string in;
+    while(1)
     {
-        argv++;
-        for(size_t i = 0; i < strlen(*argv); i++)
-            (*argv)[i] = std::toupper((*argv)[i]);
-        std::cout << *argv << " ";
+        std::cout << "Please, enter command: ";
+        std::cin >> in;
+        if (in == "EXIT")
+        {
+            std::cout << "Bye :)" << std::endl;
+            break;
+        }
+        else if (in == "ADD")
+            app.AddContact();
+        else if (in == "SEARCH")
+            app.FindContact();
+        else
+            std::cout << "Enter correct command!" << std::endl;
+        clearerr(stdin);
+        std::cin.clear();
     }
-}
-
-int main(int argc, char **argv)
-{
-    if (argc == 1)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return (0);
-    } else
-        meg(argc, argv);
-    std::cout << std::endl;
-    return (0);
+    return 0;
 }
