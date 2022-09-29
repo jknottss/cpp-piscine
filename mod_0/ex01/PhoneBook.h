@@ -26,8 +26,8 @@ public:
     void FindContact();
 private:
     int index;
-    void drawCommands();
-    Contact contacts[7];
+    void printCommands();
+    Contact contacts[8];
     void printAll();
     void printStr(std::string &str);
 };
