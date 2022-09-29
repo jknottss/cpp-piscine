@@ -4,12 +4,12 @@ SRC		=	main.cpp \
 			PhoneBook.cpp \
 			Contact.cpp
 
-HDR		=	PhoneBook.hpp \
-			Contact.hpp
+HDR		=	PhoneBook.h \
+			Contact.h
 # ---------------------------------
 OBJ 	=	$(SRC:.cpp=.o)
 
-CC		=	clang++
+CC		=	c++
 
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 

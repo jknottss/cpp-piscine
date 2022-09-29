@@ -14,6 +14,7 @@
 #define PHONEBOOK_H
 
 #include "iostream"
+#include "iomanip"
 #include "string.h"
 #include "Contact.h"
 
@@ -28,9 +29,8 @@ private:
     int index;
     void printCommands();
     Contact contacts[8];
-    void printAll();
+    int printAll();
     void printStr(std::string &str);
 };
-
 
 #endif

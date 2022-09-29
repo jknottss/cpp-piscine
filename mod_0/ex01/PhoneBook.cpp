@@ -23,10 +23,10 @@ PhoneBook::~PhoneBook()
 
 void PhoneBook::AddContact()
 {
-    if (index == 7)
-        index = 0;
     contacts[index].Create();
     index++;
+    if (index == 8)
+        index = 0;
 }
 void PhoneBook::FindContact()
 {
@@ -40,7 +40,20 @@ void PhoneBook::FindContact()
     }
 
     i = printAll();
-
+    std::cout << "Enter index: ";
+    std::cin >> in;
+    if (in > 0 && in < i+1)
+    {
+        std::cout << "Firstname:\t" << contacts[in-1].getFirstName() << std::endl;
+        std::cout << "Lastname\t" << contacts[in-1].getLastName() << std::endl;
+        std::cout << "Nickname\t" << contacts[in -1].getNickName() << std::endl;
+        std::cout << "Phone number\t" << contacts[in -1].getPhoneNumber() << std::endl;
+        std::cout << "Darkest secret\t" << contacts[in -1].getDarkestSecret() << std::endl;
+    }
+    else
+        std::cout << "Wrong index" << std::endl;
+    std::cin.clear();
+    std::cin.ignore(1000, '\n');
 }
 
 int PhoneBook::printAll()
@@ -49,12 +62,18 @@ int PhoneBook::printAll()
     std::cout << "+--------------------------------------+\n"
                  "|Index| FirstName| LastName | NickName |\n"
                  "+--------------------------------------+\n";
-    for (i = 0; i < 8; i++)
-    {
-        if(contacts[i].getFirstName().empty())
+    for (i = 0; i < 8; i++) {
+        if (contacts[i].getFirstName().empty())
             break;
+
+        std::cout << "|" << std::setw(5) << i + 1 << "|";
+        printStr(contacts[i].getFirstName());
+        printStr(contacts[i].getLastName());
+        printStr(contacts[i].getNickName());
+        std::cout << "\n";
     }
-    std::cout << "|" << std::setw(5) << i + 1 << "|";
+    std::cout << "+--------------------------------------+\n";
+    return i;
 
 }
 
@@ -75,5 +94,4 @@ void PhoneBook::printStr(std::string &str)
         std::cout << str.substr(0,9) << ".|";
     else
         std::cout << std::setw(10) << str << "|";
-
 }
