@@ -6,12 +6,11 @@
 /*   By: jknotts <jknotts@student.21-school>       +#+  +:+       +#+         */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 22:43:52 by jknotts           #+#    #+#             */
-/*   Updated: 2022/10/01 13:12:25 by                  ###   ########.fr       */
+/*   Updated: 2022/10/02 11:31:23 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
 
 void meg(int argc, char **argv)
 {
