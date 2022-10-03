@@ -2,8 +2,8 @@
 #define WEAPON_H
 
 
-#include "strings.h"
-#include "iostream"
+#include <strings.h>
+#include <iostream>
 
 class Weapon {
 public:

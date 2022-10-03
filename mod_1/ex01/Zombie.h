@@ -2,8 +2,8 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 
-#include "iostream"
-#include "string.h"
+#include <iostream>
+#include <string.h>
 
 class Zombie
 {

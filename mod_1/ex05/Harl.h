@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Harl.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jknotts <jknotts@student.21-school>       +#+  +:+       +#+         */
+/*   By:  <jknotts@student.21-school>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 22:43:52 by jknotts           #+#    #+#             */
-/*   Updated: 2022/09/26 23:35:44 by jknotts          ###   ########.fr       */
+/*   Created: 2022/10/02 11:23:41 by jknotts           #+#    #+#             */
+/*   Updated: 2022/10/02 11:46:32 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef HARL_H
+#define HARL_H
 
 #include <iostream>
-#include <string.h>
 
-class Zombie
-{
-	public:
-	Zombie(std::string name);
-	~Zombie();
-	void announce(void);
-
-	private:
-		std::string _name;
+class Harl {
+    public:
+        Harl();
+        ~Harl();
+        void complain(std::string level);
+    private:
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
 };
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
 
 #endif
