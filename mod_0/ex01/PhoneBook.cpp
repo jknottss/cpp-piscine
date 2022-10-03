@@ -90,6 +90,8 @@ void PhoneBook::printCommands()
 
 void PhoneBook::printStr(std::string &str)
 {
+    if (str.empty())
+        str.append("Empty");
     if (str.length() > 10)
         std::cout << str.substr(0,9) << ".|";
     else
