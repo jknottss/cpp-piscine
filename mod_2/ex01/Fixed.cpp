@@ -12,8 +12,6 @@
 
 #include "Fixed.h"
 
-const int Fixed::_fract = 8;
-
 Fixed::Fixed() : _point(0)
 {
     std::cout << "Default constructor called" << std::endl;

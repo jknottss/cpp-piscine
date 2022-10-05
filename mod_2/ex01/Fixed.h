@@ -30,7 +30,7 @@ public:
     int toInt(void) const;
 private:
     int _point;
-    static const int _fract;
+    static const int _fract = 8;
 };
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
