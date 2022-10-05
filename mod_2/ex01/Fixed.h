@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By:  <jknotts@student.21-school>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,40 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.h"
+#ifndef FIXED_H
+#define FIXED_H
 
-Fixed::Fixed() : _point(0)
-{
-    std::cout << "Default constructor called" << std::endl;
-}
+#include <iostream>
+#include "cmath"
+class Fixed {
+public:
+    Fixed();
+    Fixed(int const val);
+    Fixed(float const val);
+    ~Fixed();
+    Fixed(Fixed const &src);
+    Fixed & operator=(Fixed const &rhs);
 
-Fixed::Fixed(const Fixed &src)
-{
-    std::cout << "Copy constructor called" << std::endl;
-    *this = src;
-}
+    int getRawBits(void) const;
+    void setRawBits(int const raw);
+    float toFloat(void) const;
+    int toInt(void) const;
+private:
+    int _point;
+    static const int _fract;
+};
 
-Fixed::~Fixed()
-{
-    std::cout << "Destructor called" << std::endl;
-}
-
-Fixed &Fixed::operator=(const Fixed &rhs)
-{
-    if (this != &rhs)
-        _point = rhs.getRawBits();
-
-    std::cout << "Copy assignment operator called" << std::endl;
-    return *this;
-}
-
-int Fixed::getRawBits() const
-{
-    std::cout << "getRawBits member function called" << std::endl;
-    return _point;
-}
-
-void Fixed::setRawBits(const int raw)
-{
-    _point = raw;
-}
+std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
+#endif

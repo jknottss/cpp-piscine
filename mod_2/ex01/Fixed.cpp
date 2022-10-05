@@ -12,9 +12,23 @@
 
 #include "Fixed.h"
 
+const int Fixed::_fract = 8;
+
 Fixed::Fixed() : _point(0)
 {
     std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(int const val)
+{
+    _point = val << _fract;
+    std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float val)
+{
+    _point = (int)roundf(val * (1 << _fract));
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &src)
@@ -37,13 +51,28 @@ Fixed &Fixed::operator=(const Fixed &rhs)
     return *this;
 }
 
+float Fixed::toFloat(void) const
+{
+    return ((float)_point / (1 << _fract));
+}
+
+int Fixed::toInt() const
+{
+    return (_point >> _fract);
+}
+
 int Fixed::getRawBits() const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return _point;
 }
 
 void Fixed::setRawBits(const int raw)
 {
     _point = raw;
+}
+
+std::ostream & operator<<(std::ostream &o, Fixed const & rhs)
+{
+    o << rhs.toFloat();
+    return o;
 }

@@ -45,10 +45,10 @@ void PhoneBook::FindContact()
     if (in > 0 && in < i+1)
     {
         std::cout << "Firstname:\t" << contacts[in-1].getFirstName() << std::endl;
-        std::cout << "Lastname\t" << contacts[in-1].getLastName() << std::endl;
-        std::cout << "Nickname\t" << contacts[in -1].getNickName() << std::endl;
-        std::cout << "Phone number\t" << contacts[in -1].getPhoneNumber() << std::endl;
-        std::cout << "Darkest secret\t" << contacts[in -1].getDarkestSecret() << std::endl;
+        std::cout << "Lastname:\t" << contacts[in-1].getLastName() << std::endl;
+        std::cout << "Nickname:\t" << contacts[in -1].getNickName() << std::endl;
+        std::cout << "Phone number:\t" << contacts[in -1].getPhoneNumber() << std::endl;
+        std::cout << "Darkest secret:\t" << contacts[in -1].getDarkestSecret() << std::endl;
     }
     else
         std::cout << "Wrong index" << std::endl;
