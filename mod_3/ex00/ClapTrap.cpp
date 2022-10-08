@@ -28,7 +28,42 @@ ClapTrap &ClapTrap:: operator=(ClapTrap const &rhs)
     return *this;
 }
 
+int ClapTrap::check() 
+{
+    if (_nrjp < 1 || _hp < 1)
+    {
+        std::cout << _name << " don't have enough energy or hit points" << std::endl;
+        return 1;  
+    }
+    return 0;
+}
+
 ClapTrap::~ClapTrap()
 {
     std::cout << "call destructor for: " << _name << std::endl;
+}
+ 
+void ClapTrap::attack(const std::string &target)
+{
+    if(check())
+     return;
+    _nrjp--;
+    std::cout << "ClapTrap " << _name << " attack " << target << " causing " << _demage <<  " points of damage!" << std::endl;
+    
+}
+
+void ClapTrap::beRepaired(unsigned int amount) 
+{
+    if (check())
+        return;
+    _nrjp--;
+    _hp += amount;
+    std::cout << "ClapTrap " << _name << " restore hp on " << amount << ", total hp " << _hp << std::endl;
+}
+
+void ClapTrap::takeDemage(unsigned int amount)
+{
+    _hp-=amount;
+    if (_hp < 0)
+        _hp = 0;
 }

@@ -22,6 +22,7 @@ private:
     int _hp;
     int _nrjp;
     int _demage;
+    int check();
 };
 
 #endif
