@@ -18,8 +18,8 @@ public:
     void beRepaired(unsigned int amount);
 	void setDmg(unsigned int amount);
 	int getDmg();
-    
-private:
+
+protected:
     std::string _name;
     int _hp;
     int _nrjp;

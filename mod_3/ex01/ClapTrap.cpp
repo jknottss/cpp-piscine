@@ -2,14 +2,14 @@
 
 ClapTrap::ClapTrap() : _hp(10), _nrjp(10), _damage(0)
 {
-    _name = "clapTrap";
-    std::cout << "call default constructor" << std::endl;
+    _name = "default name";
+    std::cout << "ClapTrap call default constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const name) : _hp(10), _nrjp(10), _damage(0)
 {
     _name = name;
-    std::cout << "call overload constructor for name: " << _name << std::endl;
+    std::cout << "ClapTrap call overload constructor for name: " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src)
@@ -40,7 +40,7 @@ int ClapTrap::check()
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "call destructor for: " << _name << std::endl;
+    std::cout << "ClapTrap call destructor for: " << _name << std::endl;
 }
  
 void ClapTrap::attack(const std::string &target)
