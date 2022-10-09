@@ -1,4 +1,4 @@
-#include "ScavTrap.h"
+#include "FragTrap.h"
 
 int main()
 {
@@ -20,6 +20,16 @@ int main()
 	d.takeDamage(c.getDmg());
 	d.guardGate();
 	d.gkStatus();
+
+	std::cout << "____fragTrap____" << std::endl;
+
+	FragTrap e("chip");
+	FragTrap f("dail");
+
+	e.attack(f.getName());
+	f.takeDamage(e.getDmg());
+	f.beRepaired(33);
+	e.highFivesGuys();
 
 	return 0;
 }

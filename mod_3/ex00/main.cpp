@@ -6,7 +6,7 @@ int main()
 	ClapTrap b("slave");
 
 	a.setDmg(5);
-	a.attack("slave");
+	a.attack(b.getName());
 	b.takeDamage(a.getDmg());
 	b.beRepaired(1);
 

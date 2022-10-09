@@ -81,7 +81,7 @@ int ClapTrap::getDmg()
 	return _damage;
 }
 
-std::string ClapTrap::getName() const
+std::string ClapTrap::getName()
 {
 	return _name;
 }
