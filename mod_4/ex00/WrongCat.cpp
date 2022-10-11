@@ -15,7 +15,7 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound() const
 {
-    std::cout << "i don't wanna work today" << std::endl;
+    std::cout << "I wanna work today!!" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &src) : WrongAnimal(src)

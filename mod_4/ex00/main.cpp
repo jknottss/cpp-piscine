@@ -25,6 +25,7 @@ int main()
 
     const WrongAnimal* wrongmeta = new WrongAnimal();
     const WrongAnimal* cat = new WrongCat();
+
     std::cout << cat->getType() << " " << std::endl;
     cat->makeSound(); //will output the wrong sound!
     wrongmeta->makeSound();
