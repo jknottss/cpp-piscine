@@ -4,6 +4,10 @@
 #include <iostream>
 #include <string>
 
+#include "Form.h"
+
+class Form;
+
 class Bureaucrat {
 public:
 	Bureaucrat(const std::string name, const int grade);
@@ -16,6 +20,7 @@ public:
 
 	void incGrade(const int n);
 	void decGrade(const int n);
+    void signForm(Form &form) const;
 
 class GradeTooHighException : public std::exception {
 public:

@@ -1,9 +1,11 @@
 NAME	=	bureaucrat
 
 SRC		=	main.cpp \
-			Bureaucrat.cpp
+			Bureaucrat.cpp \
+			Form.cpp
 
 HDR		=	Bureaucrat.h \
+			Form.h
 
 OBJ 	=	$(SRC:.cpp=.o)
 
