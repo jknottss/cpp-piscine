@@ -37,7 +37,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     if (getiIsSigned() && executor.getGrade() <= getGradeToExecute())
     {
         std::ofstream os;
-        os.open(_target + "_shrubbery", std::ofstream::out | std::ofstream::trunc);
+        os.open(_target + "_shrubbery");
         os << "       _-_\n"
               "    /~~   ~~\\\n"
               " /~~         ~~\\\n"
@@ -47,6 +47,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
               "_- -   | | _- _\n"
               "  _ -  | |   -_\n"
               "      // \\\\" << std::endl;
+        os.close();
         std::cout << "Create shrubbery" << std::endl;
     }
     else
