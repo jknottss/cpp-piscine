@@ -39,7 +39,7 @@ const std::string &Form::getName() const
     return _name;
 }
 
-bool Form::getiIsSigned() const
+bool Form::getIsSigned() const
 {
     return _isSigned;
 }
@@ -84,7 +84,7 @@ std::ostream & operator<<(std::ostream &os, Form const &rhs)
     os << rhs.getName() << ", grade to sign = " << rhs.getGradeToSign()
     << " grade to execute = " << rhs.getGradeToExecute();
 
-    if (rhs.getiIsSigned())
+    if (rhs.getIsSigned())
         std::cout << "\nForm signed";
     else
         std::cout << "\nForm not signed";

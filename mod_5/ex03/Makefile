@@ -5,13 +5,15 @@ SRC		=	main.cpp \
 			Form.cpp \
 			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp \
+			Intern.cpp
 
 HDR		=	Bureaucrat.h \
 			Form.h \
 			ShrubberyCreationForm.h \
 			RobotomyRequestForm.h \
-			PresidentialPardonForm.h
+			PresidentialPardonForm.h \
+			Intern.h
 
 OBJ 	=	$(SRC:.cpp=.o)
 
