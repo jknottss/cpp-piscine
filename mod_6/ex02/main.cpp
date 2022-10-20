@@ -17,11 +17,11 @@ Base *generate()
 
 void identify(Base *inst)
 {
-    if (A *a = dynamic_cast<A *>(inst))
+    if (dynamic_cast<A *>(inst))
         std::cout << "A" << std::endl;
-    else if (B *b = dynamic_cast<B *>(inst))
+    else if (dynamic_cast<B *>(inst))
         std::cout << "B" << std::endl;
-    else if (C *c = dynamic_cast<C *>(inst))
+    else if (dynamic_cast<C *>(inst))
         std::cout << "C" << std::endl;
 }
 
