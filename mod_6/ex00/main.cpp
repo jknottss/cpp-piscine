@@ -6,12 +6,12 @@ int main(int ac, char **av)
 	{
 		try
 		{
-			Convert tc = Convert(av[1]);
+			Convert value = Convert(av[1]);
 
-			tc.ToChar();
-			tc.ToInt();
-			tc.ToFloat();
-			tc.ToDouble();
+			value.ToChar();
+			value.ToInt();
+			value.ToFloat();
+			value.ToDouble();
 		}
 		catch(const std::exception& e)
 		{
