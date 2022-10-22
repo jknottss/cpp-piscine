@@ -1,8 +1,8 @@
-NAME	=	iter
+NAME	=	array
 
 SRC		=	main.cpp \
 
-HDR 	= 	Iter.h 
+HDR 	= 	Array.hpp 
 
 OBJ 	=	$(SRC:.cpp=.o)
 
