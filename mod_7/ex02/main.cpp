@@ -42,6 +42,7 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
+
 	for (int i = 0; i < 3; i++)
         std::cout << numbers[i] << " " << mirror[i] << std::endl;
 	std::cout << std::endl;
@@ -52,8 +53,11 @@ int main(int, char**)
 	for (int i = 0; i < 3; i++)
 		std::cout << numbers[i] << " " << mirror[i] << std::endl;
 	std::cout << std::endl;
+
 	Array<int> numbers2(3);
+
 	numbers2 = numbers;
+    
 	for (int i = 0; i < 3; i++)
 		std::cout << numbers2[i] << " " << mirror[i] << std::endl;
 	std::cout << std::endl;
